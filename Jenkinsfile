@@ -7,7 +7,7 @@ node {
     stage("compile"){
         echo "compiling the source code"
 
-        sh './gradlew clean build'
+        sh 'gradle clean build'
 
     }
 
