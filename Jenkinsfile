@@ -20,8 +20,10 @@ node {
 
         //aws cli login
         sh 'aws ecr get-login --no-include-email --region us-west-2'
-        docker.withRegistry("https://721560409748.dkr.ecr.us-west-2.amazonaws.com",'ecr:us-west-2:ecr-credential')
-        app.push()
+        docker.withRegistry("https://721560409748.dkr.ecr.us-west-2.amazonaws.com",'ecr:us-west-2:ecr-credential'){
+            app.image("henrylian").push("${env.BUILD_NUMBER}")
+        }
+
     }
 
     stage("deploy"){
