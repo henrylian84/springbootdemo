@@ -21,7 +21,7 @@ node {
         //aws cli login
         sh 'aws ecr get-login --no-include-email --region us-west-2'
         docker.withRegistry("https://721560409748.dkr.ecr.us-west-2.amazonaws.com"){
-            app.image("henrylian").push("${env.BUILD_NUMBER}")
+            app.image("henrylian:${env.BUILD_NUMBER}").push("latest")
         }
 
     }
