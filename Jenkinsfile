@@ -20,7 +20,7 @@ node {
 
         //aws cli login
         sh 'aws ecr get-login --no-include-email --region us-west-2'
-        docker.withRegistry("721560409748.dkr.ecr.us-east-1.amazonaws.com/henrylian", null, {})
+        docker.withRegistry("https://721560409748.dkr.ecr.us-east-1.amazonaws.com", null, {})
         app.push()
     }
 
