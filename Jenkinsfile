@@ -16,9 +16,9 @@ node {
     stage("build docker"){
         echo "building docker"
         def app = docker.build("henrylian/springbootdemo:${env.BUILD_NUMBER}")
-def say = { println it }
+        sh 'aws ecr get-login --no-include-email --region us-west-2'
 
-        docker.withRegistry("https://registry.hub.docker.com", 'docker-registry-login', say)
+        docker.withRegistry("721560409748.dkr.ecr.us-east-1.amazonaws.com/henrylian")
         app.push()
     }
 
