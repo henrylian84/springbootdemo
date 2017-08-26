@@ -25,9 +25,9 @@ node {
         //    app.push("${env.BUILD_NUMBER}")
         //}
         docker.withRegistry('https://registry.hub.docker.com', 'docker-registry-login'){
-
+            app.push();
         }
-        app.push();
+
 
     }
 
