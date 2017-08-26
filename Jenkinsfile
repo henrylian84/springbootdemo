@@ -15,7 +15,7 @@ node {
 
     stage("build docker"){
         echo "building docker"
-        def app = docker.build('springbootdemo:${env.BUILD_NUMBER}')
+        def app = docker.build("springbootdemo:${env.BUILD_NUMBER}")
         //docker registry is not required if you have logged in docker login command.
 
         //aws cli login
